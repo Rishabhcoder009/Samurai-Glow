@@ -7,144 +7,216 @@
 <title>Samurai Glow</title>
 
 <link rel="manifest" href="manifest.json">
-
-<!-- iPhone Support -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Samurai Glow">
 <link rel="apple-touch-icon" href="icon-192.png">
 
 <style>
-* {
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+min-height:100vh;
 }
-
-body {
-  margin: 0;
-  background: #000;
-  color: #e5e5e5;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  padding: 20px;
+nav{
+position:fixed;top:0;width:100%;
+display:flex;justify-content:space-around;
+padding:15px;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,0.08);
+border-bottom:1px solid rgba(255,255,255,0.1);
+z-index:1000;
 }
-
-h1 {
-  text-align: center;
-  font-weight: 500;
-  letter-spacing: 2px;
-  margin-bottom: 30px;
+nav button{
+background:none;border:none;color:white;
+font-size:14px;cursor:pointer;transition:0.3s;
 }
-
-.section {
-  margin-bottom: 35px;
+nav button:hover{color:#00e5ff;}
+section{
+display:none;
+padding:90px 20px 30px;
+animation:fade 0.4s ease-in-out;
 }
-
-.section h2 {
-  font-size: 18px;
-  border-left: 2px solid #555;
-  padding-left: 10px;
-  margin-bottom: 10px;
-  font-weight: 500;
+section.active{display:block;}
+@keyframes fade{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;transform:translateY(0);}
 }
-
-ul {
-  list-style: none;
-  padding: 0;
+.card{
+background:rgba(255,255,255,0.08);
+padding:15px;
+margin-bottom:15px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 15px rgba(0,255,255,0.3);
 }
-
-li {
-  padding: 8px 0;
-  border-bottom: 1px solid #111;
-  font-size: 14px;
-}
-
-footer {
-  text-align: center;
-  font-size: 12px;
-  color: #555;
-  margin-top: 40px;
-}
+h2{margin-bottom:15px;color:#00e5ff;}
+h3{margin-bottom:8px;color:#00ffd5;}
+ul{margin-left:15px;margin-bottom:10px;}
+p{margin-bottom:8px;}
 </style>
 </head>
 
 <body>
 
-<h1>⚔️ SAMURAI GLOW</h1>
+<nav>
+<button onclick="showTab('training')">Workout</button>
+<button onclick="showTab('diet')">Diet</button>
+<button onclick="showTab('glow')">Glow Up</button>
+</nav>
 
-<div class="section">
-<h2>Workout Plan</h2>
+<!-- TRAINING -->
+<section id="training" class="active">
+
+<h2>⚔️ Training Phases</h2>
+
+<div class="card">
+<h3>Phase 1 – Post Boards (3 Weeks)</h3>
 <ul>
-<li>Brisk Walking – 30 min daily</li>
-<li>Outdoor Cycling – 3x/week (45 min)</li>
-<li>Badminton – 2x/week</li>
-<li>Dumbbell Chest + Shoulder – 3x/week</li>
-<li>Back + Biceps – 2x/week</li>
-<li>Leg Day (Squats, Lunges) – 2x/week</li>
-<li>Core Training – 3x/week</li>
-<li>Stretching – Daily 10 min</li>
+<li>Mon – Cardio + Core (20min brisk walk + 15min light jog + plank 3x30s + leg raises 3x12)</li>
+<li>Tue – Full Body Strength (squats 3x12 + pushups 3x12 + DB rows 3x12 + shoulder press 3x10)</li>
+<li>Wed – Cycling 45–60min (steady pace + 10min faster push in middle)</li>
+<li>Thu – Badminton (45–60min play + light stretching)</li>
+<li>Fri – Lower Body (squats 4x12 + lunges 3x12 + RDL 3x10 + calf raises 3x20)</li>
+<li>Sat – Long Walk (45–60min brisk + mobility stretch)</li>
+<li>Sun – Rest</li>
 </ul>
 </div>
 
-<div class="section">
-<h2>Vegetarian Diet</h2>
+<div class="card">
+<h3>Phase 2 – School Start (1 Month)</h3>
 <ul>
-<li>Morning: Warm water + soaked almonds</li>
-<li>Breakfast: Oats / Poha / Upma + fruit</li>
-<li>Lunch: Dal + Roti + Sabzi + Salad</li>
-<li>Evening: Peanut butter sandwich / Sprouts</li>
-<li>Dinner: Paneer / Tofu + Vegetables</li>
-<li>Daily Protein Goal: 90–110g</li>
-<li>Water: 3–4 Litres</li>
+<li>2 Strength Days (Push: pushups 4x12 + DB press 4x10 + triceps 3x12 | Pull: rows 4x12 + curls 3x12 + dead hang 3x30s)</li>
+<li>1 Cycling (45min moderate pace)</li>
+<li>1 Badminton (45min active play)</li>
+<li>1 Cardio + Core (20min jog + core circuit 3 rounds)</li>
+<li>2 Rest Days</li>
 </ul>
 </div>
 
-<div class="section">
-<h2>Hair Growth (Wolf / Samurai Style)</h2>
+<div class="card">
+<h3>Phase 3 – Summer Break (1.5 Months)</h3>
 <ul>
-<li>Oil massage – 2x/week</li>
-<li>Mild shampoo – 2–3x/week</li>
-<li>No heat styling</li>
-<li>High protein diet</li>
-<li>Biotin foods (nuts, seeds, spinach)</li>
-<li>Do not trim for 4–6 months</li>
+<li>Push (pushups 4x15 + DB chest press 4x12 + shoulder press 4x12 + triceps 3x15)</li>
+<li>Cycling Intervals (5min warmup + 1min fast + 2min slow × 6–8 rounds + cooldown)</li>
+<li>Pull (rows 4x12 + curls 4x12 + hammer curls 3x12 + dead hang 3x40s)</li>
+<li>Badminton + Core (45min play + plank 3x45s + leg raises 3x15)</li>
+<li>Heavy Legs (squats 4x15 + lunges 4x12 + RDL 4x12 + calf raises 4x20)</li>
+<li>HIIT + Walk (jump squats 4x12 + burpees 4x10 + mountain climbers 4x25 + 15min brisk walk)</li>
+<li>Rest</li>
 </ul>
 </div>
 
-<div class="section">
-<h2>Skin Care</h2>
+<div class="card">
+<h3>Phase 4 – After Summer</h3>
 <ul>
-<li>Gentle face wash – 2x/day</li>
-<li>Moisturizer daily</li>
-<li>Sunscreen when outside</li>
-<li>Sleep 7–8 hours</li>
-<li>Reduce junk & sugar</li>
+<li>Push (4x12 compound focus)</li>
+<li>Pull (4x12 back & biceps focus)</li>
+<li>Legs (4x12 lower body focus)</li>
+<li>Cardio (30–40min steady state)</li>
+<li>Optional Sport (badminton or cycling light)</li>
+<li>2 Rest Days</li>
 </ul>
 </div>
 
-<div class="section">
-<h2>Grooming</h2>
+</section>
+
+<!-- VEG DIET -->
+<section id="diet">
+
+<h2>🥗 Vegetarian Diet Plan</h2>
+
+<div class="card">
+<h3>Breakfast</h3>
 <ul>
-<li>Maintain beard / clean shave</li>
-<li>Trim nails weekly</li>
+<li>Oats with milk</li>
+<li>2–3 Paneer cubes OR Peanut butter sandwich</li>
+<li>1 Banana</li>
+<li>5–6 Almonds + 2 Walnuts</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Lunch</h3>
+<ul>
+<li>2–3 Roti OR 1 bowl rice</li>
+<li>Dal / Rajma / Chole</li>
+<li>Paneer 100–150g</li>
+<li>Salad (Cucumber, Carrot, Beetroot)</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Dinner</h3>
+<ul>
+<li>2 Roti (light)</li>
+<li>Mixed vegetable sabzi</li>
+<li>Curd or Buttermilk</li>
+<li>Sprouts bowl (small)</li>
+</ul>
+</div>
+
+<div class="card">
+<p><b>Rules:</b> High protein • No sugary drinks • 3–4L water • 7–8h sleep</p>
+</div>
+
+</section>
+
+<!-- GLOW UP -->
+<section id="glow">
+
+<h2>🔥 Glow-Up System</h2>
+
+<div class="card">
+<h3>Posture</h3>
+<ul>
+<li>Wall Hold – 2 min</li>
+<li>Chin Tucks – 3x15</li>
+<li>Dead Hang – 3x20 sec</li>
+<li>Plank – 2x45 sec</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Skin Care</h3>
+<ul>
+<li>Morning – Face Wash + Moisturizer + Sunscreen</li>
+<li>Night – Face Wash + Moisturizer</li>
+<li>Change pillow cover weekly</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Hair Care</h3>
+<ul>
+<li>Oil 1–2x/week</li>
+<li>Shampoo 2–3x/week</li>
+<li>Conditioner</li>
+<li>Trim every 8–10 weeks</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Grooming</h3>
+<ul>
+<li>Trim nails</li>
+<li>Clean shoes</li>
 <li>Iron clothes</li>
-<li>Use mild deodorant</li>
-<li>Maintain posture (shoulders back)</li>
+<li>Brush 2x daily</li>
 </ul>
 </div>
 
-<div class="section">
-<h2>Confidence Ritual</h2>
-<ul>
-<li>10 min meditation daily</li>
-<li>Read 10 pages/day</li>
-<li>Cold shower occasionally</li>
-<li>Limit screen time</li>
-<li>Speak slowly & clearly</li>
-</ul>
-</div>
+</section>
 
-<footer>
-Built for discipline. Built for growth.
-</footer>
+<script>
+function showTab(id){
+document.querySelectorAll("section").forEach(sec=>{
+sec.classList.remove("active");
+});
+document.getElementById(id).classList.add("active");
+}
+</script>
 
 </body>
 </html>
